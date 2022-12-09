@@ -22,9 +22,16 @@ response = requests.get(endpoint, params=params)
 # Print the response status code to check if the request was successful
 print(response.status_code)
 
-# If the request was successful, parse the JSON data from the response
+# If the request was successful, parse the JSON data from the ressponse
 if response.status_code == 200:
     data = response.json()
     print(data)
+    vreme=data['weather'][0]['description']
+    temperature=round(data['main']['temp'],2)
+    wind=data['wind']['speed']
+    print(vreme)
+    print(temperature)
+    print(wind)
+
 else:
     print('Nu exista asa oras, mai incearca sa reintroduci numele')
