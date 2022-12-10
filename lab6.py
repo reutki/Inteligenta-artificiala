@@ -32,6 +32,11 @@ if response.status_code == 200:
     print(vreme)
     print(temperature)
     print(wind)
+    file_name = "data.txt"
+
+    with open(file_name, "w") as file:
+        file.write('data='+str(data))
 
 else:
     print('Nu exista asa oras, mai incearca sa reintroduci numele')
+
